@@ -56,7 +56,8 @@
       "name": "try{ PUSH0, THROWIFNOT }catch{ PUSH3, RET }",
       "script": [
         "TRY",
-        "0x070009",
+        "0x08000a",
+        "PUSH0",
         "PUSH0",
         "THROWIFNOT",
         "ENDTRY",
@@ -69,13 +70,14 @@
           "actions": [
             "stepInto",
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 7,
+                "instructionPointer": 8,
                 "nextInstruction": "PUSH3"
               }
             ]
@@ -102,7 +104,8 @@
       "name": "try{ TRHOW xxxx }catch{ PUSH3, RET }",
       "script": [
         "TRY",
-        "0x0A000C",
+        "0x0b000d",
+        "PUSH0",
         "THROW",
         "0x02000000",
         "ENDTRY",
@@ -114,13 +117,14 @@
         {
           "actions": [
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 10,
+                "instructionPointer": 11,
                 "nextInstruction": "PUSH3"
               }
             ]

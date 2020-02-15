@@ -285,14 +285,16 @@ namespace Neo.VM
                     }
                 case OpCode.THROW:
                     {
-                        return ExecuteTryCatch(instruction.TokenString);
+                        if (!TryPop(out StackItem error)) return false;
+                        return ExecuteThrow(error);
                     }
                 case OpCode.THROWIF:
                 case OpCode.THROWIFNOT:
                     {
                         if (!TryPop(out bool x)) return false;
+                        if (!TryPop(out StackItem error)) return false;
                         if (x ^ (instruction.OpCode == OpCode.THROWIF)) break;
-                        return ExecuteTryCatch(StackItem.Null);
+                        return ExecuteThrow(error);
                     }
                 case OpCode.TRY:
                     {
@@ -335,7 +337,7 @@ namespace Neo.VM
                             if (postOpcode >= OpCode.THROW && postOpcode <= OpCode.THROWIFNOT)
                             {
                                 StackItem error = currentTry.PostExecuteOpcode.Item2 as StackItem;
-                                return ExecuteTryCatch(error);
+                                return ExecuteThrow(error);
                             }
                             if (postOpcode == OpCode.RET)
                             {
@@ -1212,7 +1214,7 @@ namespace Neo.VM
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        private bool ExecuteTryCatch(StackItem error)
+        private bool ExecuteThrow(StackItem error)
         {
             while (InvocationStack.Count > 0)
             {

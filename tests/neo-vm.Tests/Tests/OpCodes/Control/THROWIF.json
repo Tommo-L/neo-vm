@@ -6,20 +6,26 @@
       "name": "Without throw exception",
       "script": [
         "PUSH0",
+        "PUSH0",
         "THROWIF"
       ],
       "steps": [
         {
           "actions": [
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 1,
+                "instructionPointer": 2,
                 "nextInstruction": "THROWIF",
                 "evaluationStack": [
+                  {
+                    "type": "integer",
+                    "value": 0
+                  },
                   {
                     "type": "integer",
                     "value": 0
@@ -42,6 +48,7 @@
     {
       "name": "Throw exception (with PUSH)",
       "script": [
+        "PUSH0",
         "PUSH1",
         "THROWIF"
       ],

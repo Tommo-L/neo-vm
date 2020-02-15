@@ -7,7 +7,8 @@
       "script": [
         "PUSH0",
         "TRY",
-        "0x07090A",
+        "0x080a0b",
+        "PUSH0",
         "PUSH1",
         "THROWIF",
         "ENDTRY",
@@ -23,13 +24,14 @@
             "stepInto",
             "stepInto",
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 8,
+                "instructionPointer": 9,
                 "nextInstruction": "PUSH2",
                 "evaluationStack": [
                   {
@@ -49,7 +51,7 @@
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 9,
+                "instructionPointer": 10,
                 "nextInstruction": "ENDCATCH",
                 "evaluationStack": [
                   {
@@ -73,7 +75,7 @@
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 10,
+                "instructionPointer": 11,
                 "nextInstruction": "PUSH3",
                 "evaluationStack": [
                   {
@@ -98,7 +100,7 @@
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 12,
+                "instructionPointer": 13,
                 "nextInstruction": "RET",
                 "evaluationStack": [
                   {
@@ -125,7 +127,8 @@
       "script": [
         "PUSH0",
         "TRY",
-        "0x070A0C",
+        "0x080b0d",
+        "PUSH0",
         "PUSH1",
         "THROWIF",
         "ENDTRY",
@@ -143,13 +146,14 @@
             "stepInto",
             "stepInto",
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 8,
+                "instructionPointer": 9,
                 "nextInstruction": "PUSH2",
                 "evaluationStack": [
                   {
@@ -170,7 +174,7 @@
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 11,
+                "instructionPointer": 12,
                 "nextInstruction": "PUSH3"
               }
             ]
@@ -197,10 +201,12 @@
       "name": "try{ push1 throwif }catch{ PUSH0, throwifnot }finally{ PUSH2}",
       "script": [
         "TRY",
-        "0x070A0B",
+        "0x080c0d",
+        "PUSH0",
         "PUSH1",
         "THROWIF",
         "ENDTRY",
+        "PUSH0",
         "PUSH0",
         "THROWIFNOT",
         "ENDCATCH",
@@ -212,13 +218,14 @@
           "actions": [
             "stepInto",
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 7,
+                "instructionPointer": 8,
                 "nextInstruction": "PUSH0"
               }
             ]
@@ -227,13 +234,14 @@
         {
           "actions": [
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 10,
+                "instructionPointer": 12,
                 "nextInstruction": "PUSH2"
               }
             ]
@@ -260,12 +268,14 @@
       "name": "try{ PUSH1 throwif }catch{ try{ PUSH0, throwifnot }finally{ PUSH2} }finally{ PUSH3}",
       "script": [
         "TRY",
-        "0x071112",
+        "0x081314",
+        "PUSH1",
         "PUSH1",
         "THROWIF",
         "ENDTRY",
         "TRY",
-        "0x000708",
+        "0x000809",
+        "PUSH0",
         "PUSH0",
         "THROWIFNOT",
         "ENDTRY",
@@ -280,13 +290,14 @@
           "actions": [
             "stepInto",
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 7,
+                "instructionPointer": 8,
                 "nextInstruction": "TRY"
               }
             ]
@@ -296,13 +307,14 @@
           "actions": [
             "stepInto",
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 14,
+                "instructionPointer": 16,
                 "nextInstruction": "PUSH2"
               }
             ]
@@ -317,7 +329,7 @@
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 17,
+                "instructionPointer": 19,
                 "nextInstruction": "PUSH3"
               }
             ]

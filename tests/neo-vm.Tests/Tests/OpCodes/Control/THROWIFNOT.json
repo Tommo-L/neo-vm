@@ -1,4 +1,4 @@
-﻿{
+{
   "category": "Control",
   "name": "THROWIFNOT",
   "tests": [
@@ -6,7 +6,7 @@
       "name": "Without throw exception",
       "script": [
         "PUSH0",
-        "NOT",
+        "PUSH1",
         "THROWIFNOT"
       ],
       "steps": [

@@ -140,7 +140,8 @@
       "script": [
         "PUSH0",
         "TRY",
-        "0x000809",
+        "0x00090a",
+        "PUSH1",
         "PUSH1",
         "THROWIF",
         "ENDTRY",
@@ -153,13 +154,14 @@
             "stepInto",
             "stepInto",
             "stepInto",
+            "stepInto",
             "stepInto"
           ],
           "result": {
             "state": "BREAK",
             "invocationStack": [
               {
-                "instructionPointer": 9,
+                "instructionPointer": 10,
                 "nextInstruction": "ENDFINALLY",
                 "evaluationStack": [
                   {
